@@ -1,0 +1,20 @@
+[build]
+bin = "./bin/gotore"
+cmd = "go build -o ./bin/gotore ."
+watch = ["*.go", "internal/**/*.go"]
+ignore = ["bin/*", "tmp/*"]
+delay = "1000"
+color = true
+
+[build.full_bin]
+env = "GO111MODULE=on"
+
+[server]
+port = 8080
+color = true
+
+[server.livereload]
+port = 35729
+
+[server.livereload.ignore]
+static = ["node_modules/**", "public/**"]
